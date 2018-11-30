@@ -88,11 +88,16 @@
             this.timerNum9 = new System.Windows.Forms.Timer(this.components);
             this.timerNum0 = new System.Windows.Forms.Timer(this.components);
             this.timerNumSpace = new System.Windows.Forms.Timer(this.components);
+            this.label23 = new System.Windows.Forms.Label();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.MobSelect = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox12);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.textBox10);
@@ -561,6 +566,7 @@
             this.buttonStop.TabIndex = 5;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // buttonOpacity
             // 
@@ -570,6 +576,7 @@
             this.buttonOpacity.TabIndex = 6;
             this.buttonOpacity.Text = "Opacity";
             this.buttonOpacity.UseVisualStyleBackColor = true;
+            this.buttonOpacity.Click += new System.EventHandler(this.buttonOpacity_Click);
             // 
             // timerNum1
             // 
@@ -614,6 +621,28 @@
             // timerNumSpace
             // 
             this.timerNumSpace.Tick += new System.EventHandler(this.timerNumSpace_Tick);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(140, 285);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(61, 13);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "Mob Select";
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(207, 284);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(15, 14);
+            this.checkBox12.TabIndex = 45;
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // MobSelect
+            // 
+            this.MobSelect.Tick += new System.EventHandler(this.MobSelect_Tick);
             // 
             // Main
             // 
@@ -694,6 +723,9 @@
         private System.Windows.Forms.Timer timerNum0;
         private System.Windows.Forms.Timer timerNumSpace;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Timer MobSelect;
     }
 }
 
