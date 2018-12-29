@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -88,14 +90,18 @@
             this.timerNum9 = new System.Windows.Forms.Timer(this.components);
             this.timerNum0 = new System.Windows.Forms.Timer(this.components);
             this.timerNumSpace = new System.Windows.Forms.Timer(this.components);
-            this.label23 = new System.Windows.Forms.Label();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.MobSelect = new System.Windows.Forms.Timer(this.components);
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.checkBox12);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label22);
@@ -144,10 +150,28 @@
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(231, 307);
+            this.groupBox1.Size = new System.Drawing.Size(231, 343);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Auto Key";
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(73, 307);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(15, 14);
+            this.checkBox12.TabIndex = 45;
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 308);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(61, 13);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "Mob Select";
             // 
             // label22
             // 
@@ -174,7 +198,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(55, 20);
             this.textBox10.TabIndex = 41;
-            this.textBox10.Text = "0";
+            this.textBox10.Text = "1000";
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label20
@@ -192,7 +216,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(55, 20);
             this.textBox9.TabIndex = 39;
-            this.textBox9.Text = "0";
+            this.textBox9.Text = "1000";
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label19
@@ -210,7 +234,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(55, 20);
             this.textBox8.TabIndex = 37;
-            this.textBox8.Text = "0";
+            this.textBox8.Text = "1000";
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label18
@@ -228,7 +252,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(55, 20);
             this.textBox7.TabIndex = 35;
-            this.textBox7.Text = "0";
+            this.textBox7.Text = "1000";
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label17
@@ -246,7 +270,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(55, 20);
             this.textBox6.TabIndex = 33;
-            this.textBox6.Text = "0";
+            this.textBox6.Text = "1000";
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label16
@@ -264,7 +288,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(55, 20);
             this.textBox5.TabIndex = 31;
-            this.textBox5.Text = "0";
+            this.textBox5.Text = "1000";
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label15
@@ -282,7 +306,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(55, 20);
             this.textBox4.TabIndex = 29;
-            this.textBox4.Text = "0";
+            this.textBox4.Text = "1000";
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label14
@@ -300,7 +324,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(55, 20);
             this.textBox3.TabIndex = 27;
-            this.textBox3.Text = "0";
+            this.textBox3.Text = "1000";
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label13
@@ -318,7 +342,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(55, 20);
             this.textBox2.TabIndex = 25;
-            this.textBox2.Text = "0";
+            this.textBox2.Text = "1000";
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label12
@@ -336,7 +360,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(55, 20);
             this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "0";
+            this.textBox1.Text = "1000";
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // checkBox11
@@ -550,7 +574,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(10, 338);
+            this.buttonStart.Location = new System.Drawing.Point(10, 367);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 4;
@@ -560,7 +584,7 @@
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(91, 338);
+            this.buttonStop.Location = new System.Drawing.Point(91, 367);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 23);
             this.buttonStop.TabIndex = 5;
@@ -570,7 +594,7 @@
             // 
             // buttonOpacity
             // 
-            this.buttonOpacity.Location = new System.Drawing.Point(172, 338);
+            this.buttonOpacity.Location = new System.Drawing.Point(172, 367);
             this.buttonOpacity.Name = "buttonOpacity";
             this.buttonOpacity.Size = new System.Drawing.Size(75, 23);
             this.buttonOpacity.TabIndex = 6;
@@ -622,33 +646,41 @@
             // 
             this.timerNumSpace.Tick += new System.EventHandler(this.timerNumSpace_Tick);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(140, 285);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(61, 13);
-            this.label23.TabIndex = 44;
-            this.label23.Text = "Mob Select";
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(207, 284);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(15, 14);
-            this.checkBox12.TabIndex = 45;
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
             // MobSelect
             // 
             this.MobSelect.Tick += new System.EventHandler(this.MobSelect_Tick);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(166, 307);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(56, 13);
+            this.label24.TabIndex = 47;
+            this.label24.Text = "milisecond";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(105, 304);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(55, 20);
+            this.textBox11.TabIndex = 46;
+            this.textBox11.Text = "1000";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(94, 13);
+            this.label25.TabIndex = 48;
+            this.label25.Text = "Coding By Alpanet";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 391);
+            this.ClientSize = new System.Drawing.Size(251, 397);
             this.Controls.Add(this.buttonOpacity);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
@@ -726,6 +758,9 @@
         private System.Windows.Forms.CheckBox checkBox12;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Timer MobSelect;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label25;
     }
 }
 
