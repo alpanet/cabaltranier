@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -91,9 +94,6 @@
             this.timerNum0 = new System.Windows.Forms.Timer(this.components);
             this.timerNumSpace = new System.Windows.Forms.Timer(this.components);
             this.MobSelect = new System.Windows.Forms.Timer(this.components);
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,6 +154,32 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Auto Key";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(94, 13);
+            this.label25.TabIndex = 48;
+            this.label25.Text = "Coding By Alpanet";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(166, 307);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(56, 13);
+            this.label24.TabIndex = 47;
+            this.label24.Text = "milisecond";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(105, 304);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(55, 20);
+            this.textBox11.TabIndex = 46;
+            this.textBox11.Text = "1000";
             // 
             // checkBox12
             // 
@@ -600,6 +626,7 @@
             this.buttonOpacity.TabIndex = 6;
             this.buttonOpacity.Text = "Opacity";
             this.buttonOpacity.UseVisualStyleBackColor = true;
+            this.buttonOpacity.Visible = false;
             this.buttonOpacity.Click += new System.EventHandler(this.buttonOpacity_Click);
             // 
             // timerNum1
@@ -649,32 +676,6 @@
             // MobSelect
             // 
             this.MobSelect.Tick += new System.EventHandler(this.MobSelect_Tick);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(166, 307);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(56, 13);
-            this.label24.TabIndex = 47;
-            this.label24.Text = "milisecond";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(105, 304);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(55, 20);
-            this.textBox11.TabIndex = 46;
-            this.textBox11.Text = "1000";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 26);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(94, 13);
-            this.label25.TabIndex = 48;
-            this.label25.Text = "Coding By Alpanet";
             // 
             // Main
             // 

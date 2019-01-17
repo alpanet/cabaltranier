@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 using AutoIt;
 
@@ -21,6 +22,7 @@ namespace cabaltranier
 
         private Process[] _processes;
 
+
         public Main()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace cabaltranier
             try
             {
                 _processes = Process.GetProcessesByName("CabalMain");
-                if (!string.IsNullOrEmpty(_processes[0].ProcessName))
+                if (_processes.Length > 0)
                 {
                     groupBox1.Enabled = true;
                 }
@@ -43,6 +45,7 @@ namespace cabaltranier
             {
                 Logger(exception);
             }
+
         }
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -164,201 +167,105 @@ namespace cabaltranier
             Opacity -= .05;
 
         }
-        #endregion
-
-        #region Timerla
-
-        private void timerNum1_Tick(object sender, EventArgs e)
+        private void Autoxit(string key)
         {
             try
             {
                 if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
                 {
-                    AutoItX.Send("1");
+                    new Thread(() =>
+                    {
+                        Thread.CurrentThread.IsBackground = true;
+                        AutoItX.Send(key);
+                    }).Start();
                 }
             }
             catch (Exception exception)
             {
                 Logger(exception);
             }
+        }
+        #endregion
 
+        #region Timerlar
+
+        private void timerNum1_Tick(object sender, EventArgs e)
+        {
+            Autoxit("1");
         }
 
         private void timerNum2_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("2");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("2");
         }
 
         private void timerNum3_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("3");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("3");
         }
 
         private void timerNum4_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("4");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("4");
         }
 
         private void timerNum5_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("5");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("5");
         }
 
         private void timerNum6_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("6");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("6");
         }
 
         private void timerNum7_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("7");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("7");
         }
 
         private void timerNum8_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("8");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("8");
         }
 
         private void timerNum9_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("9");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("9");
         }
 
         private void timerNum0_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("0");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("0");
         }
 
         private void timerNumSpace_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send(" ");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit(" ");
         }
 
         private void MobSelect_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
-                {
-                    AutoItX.Send("z");
-                }
-            }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+            Autoxit("z");
         }
+
+
+
         #endregion
 
         #region Loglama
 
         private void Logger(Exception exception)
         {
-            if (Directory.Exists(@"C:\LogTranier"))
+            Guid g = Guid.NewGuid();
+            string GuidString = Convert.ToBase64String(g.ToByteArray());
+            GuidString = GuidString.Replace("=", "");
+            GuidString = GuidString.Replace("+", "");
+            if (!Directory.Exists(@"C:\LogTranier"))
             {
                 Directory.CreateDirectory(@"C:\LogTranier");
             }
-            TextWriter dosya = new StreamWriter(@"C:\LogTranier\" + DateTime.Now + ".txt");
+            TextWriter dosya = new StreamWriter(@"C:\LogTranier\" + GuidString + DateTime.Now.ToString("yyyymmdd") + ".txt");
             dosya.WriteLine(exception);
             dosya.Flush();
             dosya.Close();
@@ -374,17 +281,20 @@ namespace cabaltranier
             if (!IsRunningAsAdministrator())
             {
                 // Setting up start info of the new process of the same application
-                ProcessStartInfo processStartInfo = new ProcessStartInfo(Assembly.GetEntryAssembly().CodeBase);
+                ProcessStartInfo processStartInfo =
+                    new ProcessStartInfo(Assembly.GetEntryAssembly().CodeBase)
+                    {
+                        UseShellExecute = true,
+                        Verb = "runas"
+                    };
 
                 // Using operating shell and setting the ProcessStartInfo.Verb to “runas” will let it run as admin
-                processStartInfo.UseShellExecute = true;
-                processStartInfo.Verb = "runas";
 
                 // Start the application as new process
                 Process.Start(processStartInfo);
 
                 // Shut down the current (old) process
-                System.Windows.Forms.Application.Exit();
+                Application.Exit();
             }
 
 
