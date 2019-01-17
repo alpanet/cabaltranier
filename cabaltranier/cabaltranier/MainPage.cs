@@ -53,6 +53,8 @@ namespace cabaltranier
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            buttonStart.Enabled = false;
+            buttonStop.Enabled = true;
             #region Interval
 
             try
@@ -138,6 +140,8 @@ namespace cabaltranier
         }
         private void buttonStop_Click(object sender, EventArgs e)
         {
+            buttonStart.Enabled = true;
+            buttonStop.Enabled = false;
             try
             {
                 timerNum1.Stop();
@@ -171,7 +175,7 @@ namespace cabaltranier
         {
             try
             {
-                if (AutoItX.WinWaitActive(_processes[0].MainWindowTitle) != 0)
+                if (AutoItX.WinActive(_processes[0].MainWindowTitle) != 0)
                 {
                     new Thread(() =>
                     {
