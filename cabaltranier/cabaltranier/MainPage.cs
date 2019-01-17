@@ -258,14 +258,14 @@ namespace cabaltranier
         private void Logger(Exception exception)
         {
             Guid g = Guid.NewGuid();
-            string GuidString = Convert.ToBase64String(g.ToByteArray());
-            GuidString = GuidString.Replace("=", "");
-            GuidString = GuidString.Replace("+", "");
+            string guidString = Convert.ToBase64String(g.ToByteArray());
+            guidString = guidString.Replace("=", "");
+            guidString = guidString.Replace("+", "");
             if (!Directory.Exists(@"C:\LogTranier"))
             {
                 Directory.CreateDirectory(@"C:\LogTranier");
             }
-            TextWriter dosya = new StreamWriter(@"C:\LogTranier\" + GuidString + DateTime.Now.ToString("yyyymmdd") + ".txt");
+            TextWriter dosya = new StreamWriter(@"C:\LogTranier\" + guidString + DateTime.Now.ToString("yyyymmdd") + ".txt");
             dosya.WriteLine(exception);
             dosya.Flush();
             dosya.Close();
