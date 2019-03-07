@@ -28,19 +28,24 @@ namespace cabaltranier
         private void Main_Load(object sender, EventArgs e)
         {
             runadmin();
-            //try
-            //{
-            //    _processes = Process.GetProcessesByName("CabalMain");
-            //    if (_processes.Length > 0)
-            //    {
-            panel1.Enabled = true;
-            //        this.Text += _processes[0].MainWindowTitle;
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    Logger(exception);
-            //}
+            try
+            {
+
+                _processes = Process.GetProcessesByName("CabalMain");
+                if (_processes.Length > 0)
+                {
+                    panel1.Enabled = true;
+                    Text += _processes[0].MainWindowTitle;
+                }
+                else
+                {
+                    MessageBox.Show("Cabal Main not found. Start CabalMain.exe ");
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger(exception);
+            }
 
             #region Default Set Settings
 
