@@ -28,19 +28,85 @@ namespace cabaltranier
         private void Main_Load(object sender, EventArgs e)
         {
             runadmin();
-            try
+            //try
+            //{
+            //    _processes = Process.GetProcessesByName("CabalMain");
+            //    if (_processes.Length > 0)
+            //    {
+            panel1.Enabled = true;
+            //        this.Text += _processes[0].MainWindowTitle;
+            //    }
+            //}
+            //catch (Exception exception)
+            //{
+            //    Logger(exception);
+            //}
+
+            #region Default Set Settings
+
+            checkboxSave.Checked = Properties.Settings.Default.checksave;
+            if (checkboxSave.Checked)
             {
-                _processes = Process.GetProcessesByName("CabalMain");
-                if (_processes.Length > 0)
-                {
-                    panel1.Enabled = true;
-                    this.Text += _processes[0].MainWindowTitle;
-                }
+                #region CheckBox Save
+                checkBox1.Checked = Properties.Settings.Default.checkBox1;
+                checkBox2.Checked = Properties.Settings.Default.checkBox2;
+                checkBox3.Checked = Properties.Settings.Default.checkBox3;
+                checkBox4.Checked = Properties.Settings.Default.checkBox4;
+                checkBox5.Checked = Properties.Settings.Default.checkBox5;
+                checkBox6.Checked = Properties.Settings.Default.checkBox6;
+                checkBox7.Checked = Properties.Settings.Default.checkBox7;
+                checkBox8.Checked = Properties.Settings.Default.checkBox8;
+                checkBox9.Checked = Properties.Settings.Default.checkBox9;
+                checkBox10.Checked = Properties.Settings.Default.checkBox10;
+                checkBoxYil.Checked = Properties.Settings.Default.checkBoxYil;
+                checkBoxEs.Checked = Properties.Settings.Default.checkBoxEs;
+                checkBox11.Checked = Properties.Settings.Default.checkBox11;
+                checkBox12.Checked = Properties.Settings.Default.checkBox12;
+                checkBoxAlt1.Checked = Properties.Settings.Default.checkBoxAlt1;
+                checkBoxAlt2.Checked = Properties.Settings.Default.checkBoxAlt2;
+                checkBoxAlt3.Checked = Properties.Settings.Default.checkBoxAlt3;
+                checkBoxAlt4.Checked = Properties.Settings.Default.checkBoxAlt4;
+                checkBoxAlt5.Checked = Properties.Settings.Default.checkBoxAlt5;
+                checkBoxAlt6.Checked = Properties.Settings.Default.checkBoxAlt6;
+                checkBoxAlt7.Checked = Properties.Settings.Default.checkBoxAlt7;
+                checkBoxAlt8.Checked = Properties.Settings.Default.checkBoxAlt8;
+                checkBoxAlt9.Checked = Properties.Settings.Default.checkBoxAlt9;
+                checkBoxAlt0.Checked = Properties.Settings.Default.checkBoxAlt0;
+                checkBoxAltYil.Checked = Properties.Settings.Default.checkBoxAltYil;
+                checkBoxAltEs.Checked = Properties.Settings.Default.checkBoxAltEs;
+                #endregion
+
+                #region TextBox Save
+                textBox1.Text = Properties.Settings.Default.textBox1;
+                textBox2.Text = Properties.Settings.Default.textBox2;
+                textBox3.Text = Properties.Settings.Default.textBox3;
+                textBox4.Text = Properties.Settings.Default.textBox4;
+                textBox5.Text = Properties.Settings.Default.textBox5;
+                textBox6.Text = Properties.Settings.Default.textBox6;
+                textBox7.Text = Properties.Settings.Default.textBox7;
+                textBox8.Text = Properties.Settings.Default.textBox8;
+                textBox9.Text = Properties.Settings.Default.textBox9;
+                textBox10.Text = Properties.Settings.Default.textBox10;
+                textBox25.Text = Properties.Settings.Default.textBox25;
+                textBox24.Text = Properties.Settings.Default.textBox24;
+                textBox26.Text = Properties.Settings.Default.textBox26;
+                textBox11.Text = Properties.Settings.Default.textBox11;
+                textBox12.Text = Properties.Settings.Default.textBox12;
+                textBox13.Text = Properties.Settings.Default.textBox13;
+                textBox14.Text = Properties.Settings.Default.textBox14;
+                textBox15.Text = Properties.Settings.Default.textBox15;
+                textBox16.Text = Properties.Settings.Default.textBox16;
+                textBox17.Text = Properties.Settings.Default.textBox17;
+                textBox18.Text = Properties.Settings.Default.textBox18;
+                textBox19.Text = Properties.Settings.Default.textBox19;
+                textBox20.Text = Properties.Settings.Default.textBox20;
+                textBox21.Text = Properties.Settings.Default.textBox21;
+                textBox22.Text = Properties.Settings.Default.textBox22;
+                textBox23.Text = Properties.Settings.Default.textBox23;
+                #endregion
             }
-            catch (Exception exception)
-            {
-                Logger(exception);
-            }
+
+            #endregion
 
         }
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,14 +125,6 @@ namespace cabaltranier
             buttonStart.Enabled = true;
             buttonStop.Enabled = false;
             TimerSetStop();
-        }
-        private void buttonOpacity_Click(object sender, EventArgs e)
-        {
-            if (Opacity < 0.5)
-                Opacity += .05;
-
-            Opacity -= .05;
-
         }
         private void Autoxit(string key)
         {
@@ -344,72 +402,58 @@ namespace cabaltranier
         {
             Autoxit("!1");
         }
-
         private void timerAltNum2_Tick(object sender, EventArgs e)
         {
             Autoxit("!2");
         }
-
         private void timerAltNum3_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!3");
         }
-
         private void timerAltNum4_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!4");
         }
-
         private void timerAltNum5_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!5");
         }
-
         private void timerAltNum6_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!6");
         }
-
         private void timerAltNum7_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!7");
         }
-
         private void timerAltNum8_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!8");
         }
-
         private void timerAltNum9_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!9");
         }
-
         private void timerNumYil_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("*");
         }
-
         private void timerNumEs_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("-");
         }
-
         private void timerAltNum0_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!0");
         }
-
         private void timerAltNumYil_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!*");
         }
-
         private void timerAltNumEs_Tick(object sender, EventArgs e)
         {
-
+            Autoxit("!-");
         }
-
         #endregion
 
         #endregion
@@ -469,8 +513,75 @@ namespace cabaltranier
             // Return TRUE if user is in role "Administrator"
             return windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator);
         }
+
         #endregion
 
-       
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (checkboxSave.Checked)
+            {
+                #region CheckBox Save
+                Properties.Settings.Default.checksave = checkboxSave.Checked;
+                Properties.Settings.Default.checkBox1 = checkBox1.Checked;
+                Properties.Settings.Default.checkBox2 = checkBox2.Checked;
+                Properties.Settings.Default.checkBox3 = checkBox3.Checked;
+                Properties.Settings.Default.checkBox4 = checkBox4.Checked;
+                Properties.Settings.Default.checkBox5 = checkBox5.Checked;
+                Properties.Settings.Default.checkBox6 = checkBox6.Checked;
+                Properties.Settings.Default.checkBox7 = checkBox7.Checked;
+                Properties.Settings.Default.checkBox8 = checkBox8.Checked;
+                Properties.Settings.Default.checkBox9 = checkBox9.Checked;
+                Properties.Settings.Default.checkBox10 = checkBox10.Checked;
+                Properties.Settings.Default.checkBoxYil = checkBoxYil.Checked;
+                Properties.Settings.Default.checkBoxEs = checkBoxEs.Checked;
+                Properties.Settings.Default.checkBox11 = checkBox11.Checked;
+                Properties.Settings.Default.checkBox12 = checkBox12.Checked;
+                Properties.Settings.Default.checkBoxAlt1 = checkBoxAlt1.Checked;
+                Properties.Settings.Default.checkBoxAlt2 = checkBoxAlt2.Checked;
+                Properties.Settings.Default.checkBoxAlt3 = checkBoxAlt3.Checked;
+                Properties.Settings.Default.checkBoxAlt4 = checkBoxAlt4.Checked;
+                Properties.Settings.Default.checkBoxAlt5 = checkBoxAlt5.Checked;
+                Properties.Settings.Default.checkBoxAlt6 = checkBoxAlt6.Checked;
+                Properties.Settings.Default.checkBoxAlt7 = checkBoxAlt7.Checked;
+                Properties.Settings.Default.checkBoxAlt8 = checkBoxAlt8.Checked;
+                Properties.Settings.Default.checkBoxAlt9 = checkBoxAlt9.Checked;
+                Properties.Settings.Default.checkBoxAlt0 = checkBoxAlt0.Checked;
+                Properties.Settings.Default.checkBoxAltYil = checkBoxAltYil.Checked;
+                Properties.Settings.Default.checkBoxAltEs = checkBoxAltEs.Checked;
+                #endregion
+
+                #region TextBox Save
+
+                Properties.Settings.Default.textBox1 = textBox1.Text;
+                Properties.Settings.Default.textBox2 = textBox2.Text;
+                Properties.Settings.Default.textBox3 = textBox3.Text;
+                Properties.Settings.Default.textBox4 = textBox4.Text;
+                Properties.Settings.Default.textBox5 = textBox5.Text;
+                Properties.Settings.Default.textBox6 = textBox6.Text;
+                Properties.Settings.Default.textBox7 = textBox7.Text;
+                Properties.Settings.Default.textBox8 = textBox8.Text;
+                Properties.Settings.Default.textBox9 = textBox9.Text;
+                Properties.Settings.Default.textBox10 = textBox10.Text;
+                Properties.Settings.Default.textBox25 = textBox25.Text;
+                Properties.Settings.Default.textBox24 = textBox24.Text;
+                Properties.Settings.Default.textBox26 = textBox26.Text;
+                Properties.Settings.Default.textBox11 = textBox11.Text;
+                Properties.Settings.Default.textBox12 = textBox12.Text;
+                Properties.Settings.Default.textBox13 = textBox13.Text;
+                Properties.Settings.Default.textBox14 = textBox14.Text;
+                Properties.Settings.Default.textBox15 = textBox15.Text;
+                Properties.Settings.Default.textBox16 = textBox16.Text;
+                Properties.Settings.Default.textBox17 = textBox17.Text;
+                Properties.Settings.Default.textBox18 = textBox18.Text;
+                Properties.Settings.Default.textBox19 = textBox19.Text;
+                Properties.Settings.Default.textBox20 = textBox20.Text;
+                Properties.Settings.Default.textBox21 = textBox21.Text;
+                Properties.Settings.Default.textBox22 = textBox22.Text;
+                Properties.Settings.Default.textBox23 = textBox23.Text;
+
+                #endregion
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }

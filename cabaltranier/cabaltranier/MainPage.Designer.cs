@@ -75,7 +75,6 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.buttonOpacity = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
             this.timerNum1 = new System.Windows.Forms.Timer(this.components);
@@ -143,6 +142,7 @@
             this.timerAltNumYil = new System.Windows.Forms.Timer(this.components);
             this.timerAltNumEs = new System.Windows.Forms.Timer(this.components);
             this.timerAltNum0 = new System.Windows.Forms.Timer(this.components);
+            this.checkboxSave = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -611,21 +611,10 @@
             this.checkBox1.Text = "num1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // buttonOpacity
-            // 
-            this.buttonOpacity.Location = new System.Drawing.Point(285, 394);
-            this.buttonOpacity.Name = "buttonOpacity";
-            this.buttonOpacity.Size = new System.Drawing.Size(75, 23);
-            this.buttonOpacity.TabIndex = 51;
-            this.buttonOpacity.Text = "Opacity";
-            this.buttonOpacity.UseVisualStyleBackColor = true;
-            this.buttonOpacity.Visible = false;
-            this.buttonOpacity.Click += new System.EventHandler(this.buttonOpacity_Click);
-            // 
             // buttonStop
             // 
             this.buttonStop.Enabled = false;
-            this.buttonStop.Location = new System.Drawing.Point(204, 394);
+            this.buttonStop.Location = new System.Drawing.Point(241, 395);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 23);
             this.buttonStop.TabIndex = 50;
@@ -635,7 +624,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(123, 394);
+            this.buttonStart.Location = new System.Drawing.Point(160, 395);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 49;
@@ -1085,8 +1074,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkboxSave);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.buttonOpacity);
             this.panel1.Controls.Add(this.buttonStop);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.buttonStart);
@@ -1153,6 +1142,16 @@
             // 
             this.timerAltNum0.Tick += new System.EventHandler(this.timerAltNum0_Tick);
             // 
+            // checkboxSave
+            // 
+            this.checkboxSave.AutoSize = true;
+            this.checkboxSave.Location = new System.Drawing.Point(326, 399);
+            this.checkboxSave.Name = "checkboxSave";
+            this.checkboxSave.Size = new System.Drawing.Size(116, 17);
+            this.checkboxSave.TabIndex = 51;
+            this.checkboxSave.Text = "Save Configuration";
+            this.checkboxSave.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1162,12 +1161,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Macro Main - Process = ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1223,7 +1224,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button buttonOpacity;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1287,6 +1287,7 @@
         private System.Windows.Forms.Timer timerAltNumYil;
         private System.Windows.Forms.Timer timerAltNumEs;
         private System.Windows.Forms.Timer timerAltNum0;
+        private System.Windows.Forms.CheckBox checkboxSave;
     }
 }
 
